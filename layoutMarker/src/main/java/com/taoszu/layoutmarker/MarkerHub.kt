@@ -36,7 +36,7 @@ object MarkerHub {
                 }
 
                 travelViewGroup(rootMarkView, contentView)
-                rootMarkView.setBackgroundColor(Color.parseColor("#20ff0000"))
+                rootMarkView.setBackgroundColor(Color.parseColor("#200000ff"))
                 windowManager.addView(rootMarkView, getMarkViewParam(actionBarViewHeight, contentView.height))
             }
 

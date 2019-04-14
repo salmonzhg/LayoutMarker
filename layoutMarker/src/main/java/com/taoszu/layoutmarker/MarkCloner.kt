@@ -8,8 +8,7 @@ import android.widget.TextView
 object MarkCloner {
 
     fun cloneViewGroup(cloneView: ViewGroup, originView: ViewGroup) {
-        cloneView.layoutParams = originView.layoutParams
-        cloneView.id = originView.id
+        cloneCommon(cloneView, originView)
         when (originView) {
             is LinearLayout -> {
                 (cloneView as LinearLayout).orientation = originView.orientation
@@ -18,13 +17,18 @@ object MarkCloner {
     }
 
     fun cloneView(cloneView: View, originView: View) {
-        cloneView.layoutParams = originView.layoutParams
-        cloneView.id = originView.id
+        cloneCommon(cloneView, originView)
         when(originView) {
             is TextView -> {
                 (cloneView as TextView).text = originView.text
             }
         }
+    }
+
+    private fun cloneCommon(cloneView: View, originView: View) {
+        cloneView.layoutParams = originView.layoutParams
+        cloneView.id = originView.id
+        cloneView.setBackgroundResource(R.drawable.mark_bg)
     }
 
 }
