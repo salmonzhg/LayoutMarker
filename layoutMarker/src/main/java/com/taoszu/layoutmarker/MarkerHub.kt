@@ -16,6 +16,7 @@ object MarkerHub {
             contentView.viewTreeObserver.addOnGlobalLayoutListener(
                     object : ViewTreeObserver.OnGlobalLayoutListener {
                         override fun onGlobalLayout() {
+                            //todo dirty awareness
                             travelView(contentView)
                             contentView.viewTreeObserver.removeOnGlobalLayoutListener(this) }
                     }
